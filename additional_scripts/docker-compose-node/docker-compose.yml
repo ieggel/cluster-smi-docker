@@ -2,7 +2,7 @@ version: '3.3'
 services:
   #--CLUSTER-SMI NODE (has to run on every machine with GPU. Node will send GPU info to cluster-smi router-----------------------------------------------
   cluster-smi-node:
-    image: medgift/cluster-smi:latest
+    image: <your_image_name>
     network_mode: "host"
     command: ./cluster-smi-node
     restart: always
