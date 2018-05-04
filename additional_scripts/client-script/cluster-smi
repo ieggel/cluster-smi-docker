@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm --net=host <your-image-name> ./cluster-smi -p -t
