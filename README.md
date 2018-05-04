@@ -98,6 +98,11 @@ Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-router
 ```
+Open the file docker-compose.yml and and specify your cluster-smi image:
+```sh
+image: <your_image_name>
+```
+
 Run docker-compose in deamon mode
 ```sh
 $ docker-compose up -d
@@ -108,6 +113,10 @@ $ docker-compose up -d
 Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-node
+```
+Open the file docker-compose.yml and and specify your cluster-smi image:
+```sh
+image: <your_image_name>
 ```
 Run docker-compose in deamon mode
 ```sh
