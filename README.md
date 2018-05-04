@@ -93,6 +93,7 @@ If you dont want to use the "docker run ..." syntax you can put the command into
 You can also use docker-compose for the node and router, which makes it convenient to run in a "service" mode by enabling "restart always". This will restart the container in case it fails or the machine is rebooted (Docker deamon needs to be started on bootup, which is normally the case by default).
 
 **Cluster-smi-router:**
+
 Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-router
@@ -103,6 +104,7 @@ $ docker-compose up -d
 ```
 
 **Cluster-smi-node:**
+
 Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-node
@@ -113,6 +115,7 @@ $ docker-compose up -d
 ```
 
 **Cluster-smi client:**
+
 Same as in option 1.
 
 Note: Using docker-compose for the client adds no benefits. 
