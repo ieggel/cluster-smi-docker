@@ -84,7 +84,7 @@ $ docker run --rm --net=host <your-image-name> ./cluster-smi
 ```
 Note: No docker-nvidia required for the client
 
-If you dont want to use the "docker run ..." syntax you can put the command into a bash script and call the bashscript. You can find an example in [additional_files/client_script](additional_scripts/client-script)
+If you dont want to use the "docker run ..." syntax you can put the command into a bash script and call the bashscript. You can find an example in [additional_files/client-script](additional_scripts/client-script)
 
 
 
@@ -120,5 +120,5 @@ Same as in option 1.
 
 Note: Using docker-compose for the client adds no benefits. 
 
-If you dont want to use the "docker run ..." syntax you can put the command into a bash script and call the bashscript. You can find an example in [additional_files/client_script](additional_scripts/client-script)
+If you dont want to use the "docker run ..." syntax you can put the command into a bash script and call the bashscript. You can find an example in [additional_files/client-script](additional_scripts/client-script)
 
