@@ -1,4 +1,3 @@
-# Dillinger
 # What is cluster-smi
 It is essentially the same as `nvidia-smi` but for multiple machines.
 Running `cluster-smi` and will output something as the following;
