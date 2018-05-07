@@ -42,7 +42,7 @@ Change to the repo root directory:
 ```sh
 $ cd cluster-smi-docker
 ```
-Edit Dockerfile (replace ***nano*** with editor of your choice:
+Edit Dockerfile (replace ***nano*** with editor of your choice):
 ```sh
 $ nano Dockerfile
 ```
@@ -67,7 +67,7 @@ $ docker push <your-image-name>
 
 **Cluster-smi router:**
 ```sh
-$ docker run --runtime=nvidia --net=host <your-image-name> ./cluster-smi-router
+$ docker run --net=host <your-image-name> ./cluster-smi-router
 ```
 Note: No docker-nvidia required for the router
 
