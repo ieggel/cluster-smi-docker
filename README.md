@@ -76,9 +76,10 @@ Open the file docker-compose.yml and and specify your cluster-smi-docker image v
 image: whiteshark/cluster-smi-docker<version>
 ```
 
-Edit the path to your config file:
+Edit the path to your local config file:
 ```sh
-image: <local_config_file_path>:/cluster-smi.yml
+volumne: 
+  - <local_config_file_path>:/cluster-smi.yml
 ```
 
 Run docker-compose in deamon mode
@@ -98,9 +99,10 @@ Open the file docker-compose.yml and and specify your cluster-smi-docker image v
 image: whiteshark/cluster-smi-docker<version>
 ```
 
-Edit the path to your config file:
+Edit the path to your local config file:
 ```sh
-image: <local_config_file_path>:/cluster-smi.yml
+volumne: 
+  - <local_config_file_path>:/cluster-smi.yml
 ```
 
 Run docker-compose in deamon mode
