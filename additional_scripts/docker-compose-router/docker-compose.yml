@@ -2,7 +2,9 @@ version: '3.3'
 services:
   #--CLUSTER-SMI ROUTER (has to run on a single machine with specific ports opened (configured in Dockerfile), no GPU required-----------------------------------------------
   cluster-smi-router:
-    image: <your_image_name>
+    image: whiteshark/cluster-smi-docker:<version>
     network_mode: "host"
+    volume:
+      - <local_config_file_path>:/cluster-smi.yml
     command: ./cluster-smi-router
     restart: always
