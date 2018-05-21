@@ -31,55 +31,28 @@ Please find more information on cluster-smi on [https://github.com/PatWie/cluste
 [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) must installed on the machine running the build.
 [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) must installed on the machine(s) running cluster-smi-node
 
-# Build image
-You have to build the Docker image yourself because configuration data is currently integrated in a cluster-smi sourcefile that is compiled during the docker build.
+# Config file
+You have to provide a yml config file in order to launch a container. A good way to do that is to create a bind mount from the host system to the container via the -v docker run argument. Please see examples below. 
 
-Clone git repository:
-```sh
-$ git clone https://github.com/ieggel/cluster-smi-docker.git
-```
-Change to the repo root directory:
-```sh
-$ cd cluster-smi-docker
-```
-Edit Dockerfile (replace ***nano*** with editor of your choice):
-```sh
-$ nano Dockerfile
-```
-Edit the configuration values mentioned in the following section inside the Dockerfile:
-```sh
-RUN sed -i 's/c.RouterIp = "127.0.0.1"/c.RouterIp = "fastgpu"/g' ./config.go
-RUN sed -i 's/c.Ports.Nodes = "9080"/c.Ports.Nodes = "9999"/g' ./config.go
-RUN sed -i 's/c.Ports.Clients = "9081"/c.Ports.Clients = "9998"/g' ./config.go
-```
-The sed commands are replacing a line containing a specific string in the config file with another string of your choice (your config). There are several comments included in the Dockerfile on how to edit those values.
-
-Now you can build the image:
-```sh
-$ docker --runtime=nvidia build -t <your-image-name> .
-```
-You can then push the image to Docker Hub (or your preffered registry server):
-```sh
-$ docker push <your-image-name>
-```
+You can find a sample (config file)[https://github.com/PatWie/cluster-smi/blob/master/cluster-smi.example.yml] in the original cluster-smi-repository.
 
 # How to run cluster-smi-docker - Option 1: without docker-compose
 
 **Cluster-smi router:**
 ```sh
-$ docker run --net=host <your-image-name> ./cluster-smi-router
+$ docker run --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:<version> ./cluster-smi-router
 ```
 Note: No docker-nvidia required for the router
 
 **Cluster-smi node:**
 ```sh
-$ docker run --runtime=nvidia --net=host <your-image-name> ./cluster-smi-node
+$ docker run --runtime=nvidia --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:<version> ./cluster-smi-node
 ```
 Note: docker-nvidia required for the node
 
 **Cluster-smi client:**
 ```sh
-$ docker run --rm --net=host <your-image-name> ./cluster-smi
+$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:<version> ./cluster-smi
 ```
 Note: No docker-nvidia required for the client
 
@@ -97,9 +70,15 @@ Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-router
 ```
-Open the file docker-compose.yml and and specify your cluster-smi image:
+
+Open the file docker-compose.yml and and specify your cluster-smi-docker image version:
 ```sh
-image: <your_image_name>
+image: whiteshark/cluster-smi-docker<version>
+```
+
+Edit the path to your config file:
+```sh
+image: <local_config_file_path>:/cluster-smi.yml
 ```
 
 Run docker-compose in deamon mode
@@ -113,10 +92,17 @@ Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-node
 ```
-Open the file docker-compose.yml and and specify your cluster-smi image:
+
+Open the file docker-compose.yml and and specify your cluster-smi-docker image version:
 ```sh
-image: <your_image_name>
+image: whiteshark/cluster-smi-docker<version>
 ```
+
+Edit the path to your config file:
+```sh
+image: <local_config_file_path>:/cluster-smi.yml
+```
+
 Run docker-compose in deamon mode
 ```sh
 $ docker-compose up -d
