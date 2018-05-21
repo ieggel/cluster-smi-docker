@@ -78,7 +78,7 @@ image: whiteshark/cluster-smi-docker<version>
 
 Edit the path to your local config file:
 ```sh
-volumne: 
+volume: 
   - <local_config_file_path>:/cluster-smi.yml
 ```
 
@@ -101,7 +101,7 @@ image: whiteshark/cluster-smi-docker<version>
 
 Edit the path to your local config file:
 ```sh
-volumne: 
+volume: 
   - <local_config_file_path>:/cluster-smi.yml
 ```
 
