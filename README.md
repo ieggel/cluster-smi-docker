@@ -43,19 +43,19 @@ For a ready to run Docker image (which is used in the examples below), You can u
 
 **Cluster-smi router:**
 ```sh
-$ docker run --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:<version> ./cluster-smi-router
+$ docker run --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:latest ./cluster-smi-router
 ```
 Note: No docker-nvidia required for the router
 
 **Cluster-smi node:**
 ```sh
-$ docker run --runtime=nvidia --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:<version> ./cluster-smi-node
+$ docker run --runtime=nvidia --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:latest ./cluster-smi-node
 ```
 Note: docker-nvidia required for the node
 
 **Cluster-smi client:**
 ```sh
-$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:<version> ./cluster-smi
+$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml whiteshark/cluster-smi:latest ./cluster-smi
 ```
 Note: No docker-nvidia required for the client
 
@@ -74,11 +74,6 @@ Change to additional_scripts/cluster-smi-node directory
 $ cd <repo-root>/additional_scripts/cluster-smi-router
 ```
 
-Open the file docker-compose.yml and and specify your cluster-smi-docker image version:
-```sh
-image: whiteshark/cluster-smi-docker<version>
-```
-
 Edit the path to your local config file:
 ```sh
 volume: 
@@ -95,11 +90,6 @@ $ docker-compose up -d
 Change to additional_scripts/cluster-smi-node directory
 ```sh
 $ cd <repo-root>/additional_scripts/cluster-smi-node
-```
-
-Open the file docker-compose.yml and and specify your cluster-smi-docker image version:
-```sh
-image: whiteshark/cluster-smi-docker<version>
 ```
 
 Edit the path to your local config file:
