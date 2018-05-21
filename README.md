@@ -34,7 +34,7 @@ Please find more information on cluster-smi on [https://github.com/PatWie/cluste
 # Config file
 You have to provide a yml config file in order to launch a container. A good way to do that is to create a bind mount from the host system to the container via the -v docker run argument. Please see examples below. 
 
-You can find a sample (config file)[https://github.com/PatWie/cluster-smi/blob/master/cluster-smi.example.yml] in the original cluster-smi-repository.
+You can find a sample [config file](https://github.com/PatWie/cluster-smi/blob/master/cluster-smi.example.yml) in the original cluster-smi-repository.
 
 # How to run cluster-smi-docker - Option 1: without docker-compose
 
