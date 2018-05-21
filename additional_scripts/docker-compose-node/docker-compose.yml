@@ -2,7 +2,7 @@ version: '3.3'
 services:
   #--CLUSTER-SMI NODE (has to run on every machine with GPU. Node will send GPU info to cluster-smi router-----------------------------------------------
   cluster-smi-node:
-    image: whiteshark/cluster-smi-docker:<version>
+    image: whiteshark/cluster-smi-docker:latest
     network_mode: "host"
     volume:
       - <local_config_file_path>:/cluster-smi.yml
