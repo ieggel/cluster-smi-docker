@@ -59,7 +59,7 @@ $ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml whites
 ```
 Note: No docker-nvidia required for the client
 
-If you dont want to use the "docker run ..." syntax you can put the command into a bash script and call the bashscript. You can find an example in [additional_files/client-script](additional_scripts/client-script)
+If you dont want to use the "docker run ..." syntax you can put the command into a bash script and call the bashscript. You can find an example in [additional_files/client-script](https://github.com/ieggel/cluster-smi-docker/tree/master/additional_scripts)
 
 
 
