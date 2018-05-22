@@ -75,7 +75,7 @@ In order to make docker-compose work with nvidia docker, you have to set the def
 "default-runtime" : "nvidia",
 ```
 
-The final dameon.jsn file should look similar to this:
+The final dameon.json file should look similar to this:
 
 ```sh
 {
@@ -89,7 +89,7 @@ The final dameon.jsn file should look similar to this:
 }
 ```
 
-Note: Doing this also removes the need to specify *--runtime=nvidia* in ordinary *docker run* when using nvidia-docker.
+Note: Doing this also removes the need to provide *--runtime=nvidia* as an arugument to the *docker run* command in order to use nvidia-docker.
 
 **Cluster-smi-router:**
 
