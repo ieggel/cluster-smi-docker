@@ -4,7 +4,7 @@ services:
   cluster-smi-node:
     image: whiteshark/cluster-smi-docker:latest
     network_mode: "host"
-    volume:
+    volumes:
       - <local_config_file_path>:/cluster-smi.yml
     command: ./cluster-smi-node
     restart: always
