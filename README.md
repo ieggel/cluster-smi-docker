@@ -27,9 +27,9 @@ Thu Jan 18 21:35:51 2018
 Please find more information on cluster-smi on [https://github.com/PatWie/cluster-smi](https://github.com/PatWie/cluster-smi)
 
 # Prerequisites
-[Docker](https://docs.docker.com/install/) must be installed on all machines using cluster-smi-docker
-[nvidia-docker](https://github.com/NVIDIA/nvidia-docker) must installed on the machine running the build.
-[nvidia-docker](https://github.com/NVIDIA/nvidia-docker) must installed on the machine(s) running cluster-smi-node
+- [Docker](https://docs.docker.com/install/) must be installed on all machines using cluster-smi-docker
+- [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) must installed on the machine running the build.
+- [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) must installed on the machine(s) running cluster-smi-node
 
 # Config file
 You have to provide a yml config file in order to launch a container. A good way to do that is to create a bind mount from the host system to the container via the -v docker run argument. Please see examples below. 
