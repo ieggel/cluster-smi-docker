@@ -37,7 +37,7 @@ You have to provide a yml config file in order to launch a container. A good way
 You can find a sample [config file](https://github.com/PatWie/cluster-smi/blob/master/cluster-smi.example.yml) in the original cluster-smi-repository.
 
 # Docker hub repository
-For a ready to run Docker image (which is used in the examples below), You can use the already built image whiteshark/cluster-smi-docker on [Docker Hub](https://hub.docker.com/r/whiteshark/cluster-smi-docker/). If you wish to build your own image, please refer to the [Dockerfile](Dockerfile).
+For a ready to run Docker image (which is used in the examples below), You can use the already built image whiteshark/cluster-smi-docker on [Docker Hub](https://hub.docker.com/r/whiteshark/cluster-smi-docker/). If you wish to build your own image, please refer to the [Dockerfile](https://github.com/ieggel/cluster-smi-docker/blob/master/Dockerfile).
 
 # How to run cluster-smi-docker - Option 1: without docker-compose
 
