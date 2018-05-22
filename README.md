@@ -68,7 +68,8 @@ If you dont want to use the "docker run ..." syntax you can put the command into
 You can also use docker-compose for the node and router, which makes it convenient to run in a "service" mode by enabling "restart always". This will restart the container in case it fails or the machine is rebooted (Docker deamon needs to be started on bootup, which is normally the case by default).
 
 **Default runtime for docker command:**
-In order to make docker-compose work with nvidia docker, you have to set the default-runtime in ***/etc/docker/daemon.json*** to ***nvidia** on every machine hosting a node or a router. Add the following line at the root level of the json file:
+
+In order to make docker-compose work with nvidia docker, you have to set the default-runtime in */etc/docker/daemon.json* to *nvidia* on every machine hosting a node or a router. Add the following line at the root level of the json file:
 
 ```sh
 "default-runtime" : "nvidia",
@@ -88,7 +89,7 @@ The final dameon.jsn file should look similar to this:
 }
 ```
 
-Note: Doing this also removes the need to specify **--runtime=nvidia** in ordinary **docker run** when using nvidia-docker.
+Note: Doing this also removes the need to specify *--runtime=nvidia* in ordinary *docker run* when using nvidia-docker.
 
 **Cluster-smi-router:**
 
