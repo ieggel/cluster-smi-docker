@@ -59,7 +59,7 @@ Note: nvidia container toolkit required for the node
 
 **Cluster-smi client:**
 ```sh
-$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi:latest-docker ./cluster-smi
+$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi-docker:latest ./cluster-smi
 ```
 Note: No nvidia container toolkit required for the client
 
