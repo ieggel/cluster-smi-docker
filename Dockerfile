@@ -42,10 +42,13 @@ ENV GOPATH="/gocode"
 #Location of yaml config file inside container
 ENV CLUSTER_SMI_CONFIG_PATH="/cluster-smi.yml"
 
-#Create new mandatory config file with default values
+#Create new mandatory config file with default values (won't compile otherwise)
 # ***************************************
 RUN cp config.example.go config.go
-# Sidenote: At runtime, the default default should be replaced, use: "docker run -v <local-path-of-yml-config>:/cluster-smi.yml ..."
+
+#Copy our config file
+COPY ./cluster-smi.yml /cluster-smi.yml
+# Sidenote: At runtime, the default default config file can be replaced, use: "docker run -v <local-path-of-yml-config>:/cluster-smi.yml ..."
 
 # Set CFLAGS and LDFLAGS according to CUDA setup before compilation
 # ***************************************
