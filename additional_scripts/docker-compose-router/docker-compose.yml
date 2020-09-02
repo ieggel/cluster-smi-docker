@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 services:
   #--CLUSTER-SMI ROUTER (has to run on a single machine with specific ports opened (configured in Dockerfile), no GPU required-----------------------------------------------
   cluster-smi-router:
