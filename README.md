@@ -47,19 +47,19 @@ For a ready to run Docker image (which is used in the examples below), You can u
 
 **Cluster-smi router:**
 ```sh
-$ docker run --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi:latest ./cluster-smi-router
+$ docker run --d --name cluster-smi-router -net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi-docker:latest ./cluster-smi-router
 ```
 Note: No nvidia container toolkit required for the router
 
 **Cluster-smi node:**
 ```sh
-$ docker run --gpus all --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi:latest ./cluster-smi-node
+$ docker run -d --name cluster-smi-node --gpus all --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi-docker:latest ./cluster-smi-node
 ```
 Note: nvidia container toolkit required for the node
 
 **Cluster-smi client:**
 ```sh
-$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi:latest ./cluster-smi
+$ docker run --rm --net=host -v <local-config-file-path>:/cluster-smi.yml medgift/cluster-smi:latest-docker ./cluster-smi
 ```
 Note: No nvidia container toolkit required for the client
 
