@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 services:
   #--CLUSTER-SMI NODE (has to run on every machine with GPU. Node will send GPU info to cluster-smi router-----------------------------------------------
   cluster-smi-node:
