@@ -7,4 +7,7 @@ services:
     volumes:
       - <local_config_file_path>:/cluster-smi.yml
     command: ./cluster-smi-node
+    device_requests:
+      - capabilities:
+        - gpu
     restart: always
